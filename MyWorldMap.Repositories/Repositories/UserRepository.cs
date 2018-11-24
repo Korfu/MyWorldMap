@@ -45,39 +45,68 @@ namespace MyWorldMapApp.Repositories
             },
         };
 
-        public IEnumerable<User> GetAll()
+        public IEnumerable<UserDTO> GetAll()
         {
-            return _allUsers;
+            return _allUsers.Select(x => new UserDTO
+            {
+                FirstName = x.FirstName,
+                LastName = x.LastName,
+                Id = x.Id,
+                VisitedCountries = x.VisitedCountries.Select(y => new TravelDestinationDTO
+                {
+                    Id = y.Id,
+                    Name = y.Name
+                }).ToList()
+            });
         }
 
-        public User Get(int id)
+        public UserDTO Get(int id)
         {
-            return _allUsers.SingleOrDefault(x => x.Id == id);
+            return _allUsers.Select(x => new UserDTO
+            {
+                FirstName = x.FirstName,
+                LastName = x.LastName,
+                Id = x.Id,
+                VisitedCountries = x.VisitedCountries.Select(y => new TravelDestinationDTO
+                {
+                    Id = y.Id,
+                    Name = y.Name
+                }).ToList()
+            }).SingleOrDefault(x => x.Id == id);
         }
        
-        public int Add(UserViewModel user)
+        public int Add(UserDTO user)
         {
-            var userToAdd =  new User {
+            var userToAdd = new User {
                 Id = _allUsers.Max(x => x.Id) + 1,
-                FirstName= user.FirstName,
+                FirstName = user.FirstName,
                 LastName = user.LastName,
-                VisitedCountries = (IList<TravelDestination>) user.VisitedCountries
+                VisitedCountries = user.VisitedCountries.Select(y => new TravelDestination
+                {
+                    Id = y.Id,
+                    Name = y.Name
+                }).ToList()
             };
+            _allUsers.Add(userToAdd);
             return userToAdd.Id;    
         }
 
-        public void Edit(UserViewModel user)
+        public void Edit(UserDTO user)
         {
-            var originalUser = _allUsers.Where(x=> x.Id == user.Id).Single();
+            var originalUser = _allUsers.Find(x=> x.Id == user.Id);
             originalUser.Id = user.Id;
             originalUser.FirstName = user.FirstName;
             originalUser.LastName = user.LastName;
-            originalUser.VisitedCountries = (IList<TravelDestination>)user.VisitedCountries;
-        }
+            originalUser.VisitedCountries = user.VisitedCountries.Select(y => new TravelDestination
+            {
+                Id = y.Id,
+                Name = y.Name
+            }).ToList();
+    }
 
-        public void Delete(UserViewModel user)
+        public void Delete(UserDTO user)
         {
-            var userToDelete = _allUsers.Where(x => x.Id == user.Id).Single();
+            var userToDelete = _allUsers.Find(x => x.Id == user.Id);
             _allUsers.Remove(userToDelete);
         } 
     }

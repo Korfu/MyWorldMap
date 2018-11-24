@@ -12,7 +12,7 @@ namespace MyWorldMapApp
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IUserRepository, UserRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
             services.AddSingleton<ITravelDestinationRepository, TravelDestinationRepository>();
             services.AddMvc();
 
@@ -33,7 +33,7 @@ namespace MyWorldMapApp
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "MyAPI V1");
             });
 
             app.UseMvc(routes =>

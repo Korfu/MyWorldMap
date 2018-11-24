@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyWorldMapApp.Repositories;
+using System.Collections.Generic;
 
 namespace MyWorldMapApp.Web.Controllers
 {
-    public class UsersController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class UsersController : ControllerBase
     {
         private readonly IUserRepository _userRepository;
         private readonly ITravelDestinationRepository _travelDestinationRepository;
@@ -15,54 +18,91 @@ namespace MyWorldMapApp.Web.Controllers
             _travelDestinationRepository = travelDestinationRepository;
         }
 
+        // GET api/values
         [HttpGet]
-        public IActionResult Index()
+        public ActionResult<IEnumerable<UserDTO>> Get()
         {
             var users = _userRepository.GetAll();
-            return View(users);
+            if (users != null)
+            {
+                return Ok(users);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
-        [HttpGet]
-        public IActionResult Add()
+        // GET api/values/5
+        [HttpGet("{id}")]
+        public ActionResult<string> Get(int id)
         {
-            return RedirectToAction("Add");
+            var user = _userRepository.Get(id);
+            if (user != null)
+            {
+                return Ok(user);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
+        // POST api/values
         [HttpPost]
-        public IActionResult Add(UserViewModel user)
+        public IActionResult Post([FromBody] UserDTO user)
         {
-            var userIdToBeSaved = _userRepository.Add(user);
-            return RedirectToAction("Index");
-
+            if (ModelState.IsValid)
+            {
+                var userToBeSaved = _userRepository.Add(user);
+                return Ok(user);
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
 
-        [HttpGet]
-        public IActionResult Edit()
+        // PUT api/values/5
+        [HttpPut("{id}")]
+        public IActionResult Edit([FromBody]UserDTO user)
         {
-            return RedirectToAction("Index");
-
+            if (ModelState.IsValid)
+            {
+                var userToBeEdited = _userRepository.Get(user.Id);
+                if (userToBeEdited != null)
+                {
+                    return Ok(userToBeEdited);
+                }
+                return BadRequest();
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
 
-        [HttpPost]
-        public IActionResult Edit(UserViewModel model)
+        // DELETE api/values/5
+        [HttpDelete("{id}")]
+        public IActionResult Delete([FromRoute]int id)
         {
-            return RedirectToAction("Index");
-
+            if (ModelState.IsValid)
+            {
+                var user = _userRepository.Get(id);
+                if (user != null)
+                {
+                    _userRepository.Delete(user);
+                    return Ok(user);
+                } else
+                {
+                    return BadRequest();
+                }
+                
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
-
-        [HttpGet]
-        public IActionResult Delete()
-        {
-            return RedirectToAction("Index");
-
-        }
-
-        [HttpDelete]
-        public IActionResult Delete(int id)
-        {
-            return RedirectToAction("Index");
-
-        }
-
     }
 }

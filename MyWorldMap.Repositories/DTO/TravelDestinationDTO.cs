@@ -1,6 +1,6 @@
 ﻿namespace MyWorldMapApp.Repositories
 {
-    public class TravelDestinationViewModel
+    public class TravelDestinationDTO
     {
         public int Id { get; set; }
         public string Name { get; set; }
