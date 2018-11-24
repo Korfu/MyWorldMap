@@ -1,4 +1,5 @@
 ﻿using MyWorldMap.Database;
+using MyWorldMapApp.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,8 +10,8 @@ namespace MyWorldMap.Repositories
     {
             User Get(int id);
             IEnumerable<User> GetAll();
-            int Add(User user);
-            void Edit(User user);
-            void Delete(User user);
+            int Add(UserViewModel user);
+            void Edit(UserViewModel user);
+            void Delete(UserViewModel user);
     }
 }

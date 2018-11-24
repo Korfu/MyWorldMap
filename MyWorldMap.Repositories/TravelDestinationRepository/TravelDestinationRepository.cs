@@ -23,7 +23,7 @@ namespace MyWorldMap.Repositories
             new TravelDestination
             {
                 Id=3,
-                Name="Argentyna"
+                Name="Argentina"
             }
         };
 
