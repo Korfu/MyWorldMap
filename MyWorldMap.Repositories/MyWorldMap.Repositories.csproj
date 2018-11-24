@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MyWorldMap.Database\MyWorldMap.Database.csproj" />
+  </ItemGroup>
+
 </Project>
