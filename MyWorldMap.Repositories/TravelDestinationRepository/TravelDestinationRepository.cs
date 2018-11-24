@@ -1,12 +1,10 @@
-﻿using System;
+﻿using MyWorldMapApp.Database;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using MyWorldMap.Database;
 
-namespace MyWorldMap.Repositories
+namespace MyWorldMapApp.Repositories
 {
-    class TravelDestinationRepository : ITravelDestinationRepository
+    public class TravelDestinationRepository : ITravelDestinationRepository
     {
         private List<TravelDestination> _allTravelDestinations = new List<TravelDestination>
         {

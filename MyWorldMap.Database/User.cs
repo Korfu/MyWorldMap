@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace MyWorldMap.Database
+namespace MyWorldMapApp.Database
 {
     public class User
     {

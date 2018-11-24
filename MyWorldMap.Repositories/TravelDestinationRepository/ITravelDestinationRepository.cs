@@ -1,7 +1,7 @@
-﻿using MyWorldMap.Database;
+﻿using MyWorldMapApp.Database;
 using System.Collections.Generic;
 
-namespace MyWorldMap.Repositories
+namespace MyWorldMapApp.Repositories
 {
     public interface ITravelDestinationRepository
     {

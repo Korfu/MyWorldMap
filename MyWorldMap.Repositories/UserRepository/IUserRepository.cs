@@ -1,10 +1,7 @@
-﻿using MyWorldMap.Database;
-using MyWorldMapApp.Web.Models;
-using System;
+﻿using MyWorldMapApp.Database;
 using System.Collections.Generic;
-using System.Text;
 
-namespace MyWorldMap.Repositories
+namespace MyWorldMapApp.Repositories
 {
     public interface IUserRepository
     {

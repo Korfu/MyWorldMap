@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWorldMapApp.Web", "MyWorldMapApp\MyWorldMapApp.Web.csproj", "{C43AA5EC-7490-4016-9243-19DF66131919}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWorldMap.Repositories", "MyWorldMap.Repositories\MyWorldMap.Repositories.csproj", "{85EA8CAD-B565-4A06-8F62-CE53C207DA3A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWorldMapApp.Repositories", "MyWorldMap.Repositories\MyWorldMapApp.Repositories.csproj", "{85EA8CAD-B565-4A06-8F62-CE53C207DA3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWorldMap.Database", "MyWorldMap.Database\MyWorldMap.Database.csproj", "{01A5DA59-291C-438A-B8DA-2A092D230466}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWorldMapApp.Database", "MyWorldMap.Database\MyWorldMapApp.Database.csproj", "{01A5DA59-291C-438A-B8DA-2A092D230466}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,4 +1,4 @@
-﻿namespace MyWorldMap.Database
+﻿namespace MyWorldMapApp.Database
 {
     public class TravelDestination
     {

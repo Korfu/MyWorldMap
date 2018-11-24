@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using MyWorldMap.Database;
-using MyWorldMapApp.Web.Models;
+using MyWorldMapApp.Database;
 
-namespace MyWorldMap.Repositories
+namespace MyWorldMapApp.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private IUserRepository _userRepository;
-
-        public UserRepository(IUserRepository userRepository)
-        {
-            _userRepository = userRepository;
-        }
-
         public static List<User> _allUsers = new List<User> {
         new User {
              FirstName="Konrad",
@@ -72,8 +63,7 @@ namespace MyWorldMap.Repositories
                 LastName = user.LastName,
                 VisitedCountries = (IList<TravelDestination>) user.VisitedCountries
             };
-            return userToAdd.Id;
-                
+            return userToAdd.Id;    
         }
 
         public void Edit(UserViewModel user)
@@ -89,10 +79,6 @@ namespace MyWorldMap.Repositories
         {
             var userToDelete = _allUsers.Where(x => x.Id == user.Id).Single();
             _allUsers.Remove(userToDelete);
-        }
-
-        
-
-        
+        } 
     }
 }
