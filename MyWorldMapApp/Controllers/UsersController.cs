@@ -22,7 +22,7 @@ namespace MyWorldMapApp.Web.Controllers
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<UserDTO>> Get()
-        {
+        { 
             var users = _userRepository.GetAll();
             if (users != null)
             {
