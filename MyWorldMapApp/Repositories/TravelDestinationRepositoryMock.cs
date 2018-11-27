@@ -1,10 +1,12 @@
 ﻿using MyWorldMapApp.Data;
+using MyWorldMapApp.Dto;
+using MyWorldMapApp.Web.Transformators;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace MyWorldMapApp.Repositories
 {
-    public class TravelDestinationRepository : ITravelDestinationRepository
+    public class TravelDestinationRepositoryMock : ITravelDestinationRepository
     {
         private List<TravelDestination> _allTravelDestinations = new List<TravelDestination>
         {
@@ -25,13 +27,15 @@ namespace MyWorldMapApp.Repositories
             }
         };
 
-        public TravelDestination Get(int id)
+        public TravelDestinationDTO Get(int id)
         {
-            return _allTravelDestinations.First(x =>x.Id == id);        }
+            var result = _allTravelDestinations.First(x => x.Id == id);
+            return TravelDestinationTransformator.Map(result);
+        }
 
-        public List<TravelDestination> GetAll()
+        public IEnumerable<TravelDestinationDTO> GetAll()
         {
-            return _allTravelDestinations;
+            return TravelDestinationListTransformator.Map(_allTravelDestinations);
         }
     }
 }

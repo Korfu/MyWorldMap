@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using MyWorldMapApp.Dto;
+using System.Collections.Generic;
 
 namespace MyWorldMapApp.Repositories
 {

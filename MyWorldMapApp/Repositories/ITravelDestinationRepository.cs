@@ -1,11 +1,12 @@
 ﻿using MyWorldMapApp.Data;
+using MyWorldMapApp.Dto;
 using System.Collections.Generic;
 
 namespace MyWorldMapApp.Repositories
 {
     public interface ITravelDestinationRepository
     {
-        List<TravelDestination> GetAll();
-        TravelDestination Get(int id);
+        IEnumerable<TravelDestinationDTO> GetAll();
+        TravelDestinationDTO Get(int id);
     }
 }
