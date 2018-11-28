@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace MyWorldMapApp.Repositories
+namespace MyWorldMapApp.Web.Repositories
 {
     public class UserRepository : IUserRepository
     {

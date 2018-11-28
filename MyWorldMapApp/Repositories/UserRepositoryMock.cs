@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using MyWorldMapApp.Data;
 using MyWorldMapApp.Dto;
-using MyWorldMapApp.Web.Helpers;
+using MyWorldMapApp.Web.Data;
+using MyWorldMapApp.Web.DTO;
 using MyWorldMapApp.Web.Transformators;
 
-namespace MyWorldMapApp.Repositories
+namespace MyWorldMapApp.Web.Repositories
 {
     public class UserRepositoryMock : IUserRepository
     {

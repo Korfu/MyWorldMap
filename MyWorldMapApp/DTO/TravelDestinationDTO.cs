@@ -1,4 +1,4 @@
-﻿namespace MyWorldMapApp.Dto
+﻿namespace MyWorldMapApp.Web.DTO
 {
     public class TravelDestinationDTO
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyWorldMapApp.Dto;
-using MyWorldMapApp.Repositories;
+using MyWorldMapApp.Web.Repositories;
 using System.Collections.Generic;
 
 namespace MyWorldMapApp.Web.Controllers

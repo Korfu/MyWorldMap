@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using MyWorldMapApp.Repositories;
-using Swashbuckle.AspNetCore.Swagger;
+using MyWorldMapApp.Web.Repositories;
 
 namespace MyWorldMapApp
 {

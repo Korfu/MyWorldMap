@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using MyWorldMapApp.Web.DTO;
+using System.Collections.Generic;
 
 namespace MyWorldMapApp.Dto
 {

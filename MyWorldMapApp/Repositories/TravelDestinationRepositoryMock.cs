@@ -1,10 +1,10 @@
-﻿using MyWorldMapApp.Data;
-using MyWorldMapApp.Dto;
+﻿using MyWorldMapApp.Web.Data;
+using MyWorldMapApp.Web.DTO;
 using MyWorldMapApp.Web.Transformators;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MyWorldMapApp.Repositories
+namespace MyWorldMapApp.Web.Repositories
 {
     public class TravelDestinationRepositoryMock : ITravelDestinationRepository
     {

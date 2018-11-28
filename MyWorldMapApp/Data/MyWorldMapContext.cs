@@ -1,4 +1,4 @@
-﻿namespace MyWorldMapApp.Data
+﻿namespace MyWorldMapApp.Web.Data
 {
     class MyWorldMapContext
     {

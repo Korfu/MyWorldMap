@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MyWorldMapApp.Data
+namespace MyWorldMapApp.Web.Data
 { 
     public class User
     {

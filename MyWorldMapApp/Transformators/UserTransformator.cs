@@ -1,5 +1,6 @@
-﻿using MyWorldMapApp.Data;
-using MyWorldMapApp.Dto;
+﻿using MyWorldMapApp.Dto;
+using MyWorldMapApp.Web.Data;
+using MyWorldMapApp.Web.DTO;
 using System.Linq;
 
 namespace MyWorldMapApp.Web.Transformators
