@@ -1,8 +1,9 @@
-﻿using MyWorldMapApp.Data;
+﻿
+using MyWorldMapApp.Web.Data;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MyWorldMapApp.Repositories
+namespace MyWorldMapApp.Web.Repositories
 {
     public class TravelDestinationRepository : ITravelDestinationRepository
     {

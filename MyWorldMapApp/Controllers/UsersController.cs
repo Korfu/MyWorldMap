@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MyWorldMapApp.Repositories;
+using MyWorldMapApp.Web.Repositories;
 using System.Collections.Generic;
 
 namespace MyWorldMapApp.Web.Controllers

@@ -1,4 +1,4 @@
-﻿namespace MyWorldMapApp.Repositories
+﻿namespace MyWorldMapApp.Web.Repositories
 {
     public class TravelDestinationDTO
     {

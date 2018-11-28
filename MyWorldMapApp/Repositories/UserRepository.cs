@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using MyWorldMapApp.Data;
+using MyWorldMapApp.Web.Data;
 
-namespace MyWorldMapApp.Repositories
+namespace MyWorldMapApp.Web.Repositories
 {
     public class UserRepository : IUserRepository
     {
